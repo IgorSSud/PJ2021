@@ -1,16 +1,27 @@
-# This is a sample Python script.
+import socket
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import playsound
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print('PyCharm')
+    sock = socket.socket()
+    sock.bind(('', 9090))
+    sock.listen(1)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+    while True:
+        conn, addr = sock.accept()
+        print('connected:', addr)
+        data = conn.recv(1024)
+        if not data:
+            conn.close()
+        # if len(data)>0:
+        #     print(str(data))
+        #     conn.send(data.upper())
+
+        if data.decode('utf-8')=='Morning!':
+            print("yes")
+            conn.send("OK".encode("utf-8"))
+            playsound.playsound("Morning.mp3")
+
+
