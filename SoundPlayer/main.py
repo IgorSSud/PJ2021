@@ -19,7 +19,7 @@ if __name__ == '__main__':
         #     print(str(data))
         #     conn.send(data.upper())
 
-        if data.decode('utf-8')=='Morning!':
+        if data.decode('utf-8')=='Morning':
             print("yes")
             conn.send("OK".encode("utf-8"))
             playsound.playsound("Morning.mp3")

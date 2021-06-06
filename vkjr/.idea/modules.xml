@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../SoundPlayer/.idea/SoundPlayer.iml" filepath="$PROJECT_DIR$/../SoundPlayer/.idea/SoundPlayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/vkjr.iml" filepath="$PROJECT_DIR$/.idea/vkjr.iml" />
     </modules>
   </component>
